@@ -1,0 +1,10 @@
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\bin\Debug\1.1-New_Device_Identification.exe.config
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\bin\Debug\1.1-New_Device_Identification.exe
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\bin\Debug\1.1-New_Device_Identification.pdb
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.csprojAssemblyReference.cache
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\_1._1_New_Device_Identification.Identification.resources
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\_1._1_New_Device_Identification.Properties.Resources.resources
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.csproj.GenerateResource.cache
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.csproj.CoreCompileInputs.cache
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.exe
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.pdb
