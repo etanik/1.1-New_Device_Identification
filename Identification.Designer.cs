@@ -45,12 +45,14 @@
             this.firma = new System.Windows.Forms.Label();
             this.kalibrasyontarih = new System.Windows.Forms.Label();
             this.Kaydet = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // İstek
             // 
             this.İstek.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.İstek.Location = new System.Drawing.Point(162, 26);
+            this.İstek.Location = new System.Drawing.Point(144, 27);
             this.İstek.Name = "İstek";
             this.İstek.Size = new System.Drawing.Size(185, 22);
             this.İstek.TabIndex = 0;
@@ -59,7 +61,7 @@
             // Uretici
             // 
             this.Uretici.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Uretici.Location = new System.Drawing.Point(162, 78);
+            this.Uretici.Location = new System.Drawing.Point(144, 79);
             this.Uretici.Name = "Uretici";
             this.Uretici.Size = new System.Drawing.Size(185, 22);
             this.Uretici.TabIndex = 1;
@@ -68,7 +70,7 @@
             // Tip
             // 
             this.Tip.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Tip.Location = new System.Drawing.Point(162, 104);
+            this.Tip.Location = new System.Drawing.Point(144, 105);
             this.Tip.Name = "Tip";
             this.Tip.Size = new System.Drawing.Size(185, 22);
             this.Tip.TabIndex = 2;
@@ -77,7 +79,7 @@
             // Serial
             // 
             this.Serial.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Serial.Location = new System.Drawing.Point(162, 130);
+            this.Serial.Location = new System.Drawing.Point(144, 131);
             this.Serial.Name = "Serial";
             this.Serial.Size = new System.Drawing.Size(185, 22);
             this.Serial.TabIndex = 3;
@@ -86,7 +88,7 @@
             // Sensitivity
             // 
             this.Sensitivity.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Sensitivity.Location = new System.Drawing.Point(162, 156);
+            this.Sensitivity.Location = new System.Drawing.Point(144, 157);
             this.Sensitivity.Name = "Sensitivity";
             this.Sensitivity.Size = new System.Drawing.Size(185, 22);
             this.Sensitivity.TabIndex = 4;
@@ -98,7 +100,7 @@
             this.Cihaz_Sec.FormattingEnabled = true;
             this.Cihaz_Sec.Items.AddRange(new object[] {
             "İvmeölçer"});
-            this.Cihaz_Sec.Location = new System.Drawing.Point(162, 52);
+            this.Cihaz_Sec.Location = new System.Drawing.Point(144, 53);
             this.Cihaz_Sec.Name = "Cihaz_Sec";
             this.Cihaz_Sec.Size = new System.Drawing.Size(185, 22);
             this.Cihaz_Sec.TabIndex = 5;
@@ -109,7 +111,7 @@
             this.CalDate.CustomFormat = "dd.MM.yyyy";
             this.CalDate.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.CalDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.CalDate.Location = new System.Drawing.Point(162, 184);
+            this.CalDate.Location = new System.Drawing.Point(144, 185);
             this.CalDate.Name = "CalDate";
             this.CalDate.Size = new System.Drawing.Size(185, 22);
             this.CalDate.TabIndex = 6;
@@ -119,7 +121,7 @@
             // Company
             // 
             this.Company.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Company.Location = new System.Drawing.Point(162, 212);
+            this.Company.Location = new System.Drawing.Point(144, 213);
             this.Company.Name = "Company";
             this.Company.Size = new System.Drawing.Size(185, 22);
             this.Company.TabIndex = 8;
@@ -129,7 +131,7 @@
             // 
             this.rfq.AutoSize = true;
             this.rfq.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rfq.Location = new System.Drawing.Point(19, 29);
+            this.rfq.Location = new System.Drawing.Point(1, 30);
             this.rfq.Name = "rfq";
             this.rfq.Size = new System.Drawing.Size(82, 14);
             this.rfq.TabIndex = 9;
@@ -139,7 +141,7 @@
             // 
             this.cihaz.AutoSize = true;
             this.cihaz.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cihaz.Location = new System.Drawing.Point(19, 55);
+            this.cihaz.Location = new System.Drawing.Point(1, 56);
             this.cihaz.Name = "cihaz";
             this.cihaz.Size = new System.Drawing.Size(33, 14);
             this.cihaz.TabIndex = 10;
@@ -149,7 +151,7 @@
             // 
             this.marka.AutoSize = true;
             this.marka.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.marka.Location = new System.Drawing.Point(19, 81);
+            this.marka.Location = new System.Drawing.Point(1, 82);
             this.marka.Name = "marka";
             this.marka.Size = new System.Drawing.Size(39, 14);
             this.marka.TabIndex = 11;
@@ -159,7 +161,7 @@
             // 
             this.model.AutoSize = true;
             this.model.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.model.Location = new System.Drawing.Point(19, 107);
+            this.model.Location = new System.Drawing.Point(1, 108);
             this.model.Name = "model";
             this.model.Size = new System.Drawing.Size(38, 14);
             this.model.TabIndex = 12;
@@ -169,7 +171,7 @@
             // 
             this.serino.AutoSize = true;
             this.serino.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.serino.Location = new System.Drawing.Point(19, 133);
+            this.serino.Location = new System.Drawing.Point(1, 134);
             this.serino.Name = "serino";
             this.serino.Size = new System.Drawing.Size(77, 14);
             this.serino.TabIndex = 13;
@@ -179,7 +181,7 @@
             // 
             this.hassasiyet.AutoSize = true;
             this.hassasiyet.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.hassasiyet.Location = new System.Drawing.Point(19, 159);
+            this.hassasiyet.Location = new System.Drawing.Point(1, 160);
             this.hassasiyet.Name = "hassasiyet";
             this.hassasiyet.Size = new System.Drawing.Size(99, 14);
             this.hassasiyet.TabIndex = 14;
@@ -189,7 +191,7 @@
             // 
             this.firma.AutoSize = true;
             this.firma.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.firma.Location = new System.Drawing.Point(19, 215);
+            this.firma.Location = new System.Drawing.Point(1, 216);
             this.firma.Name = "firma";
             this.firma.Size = new System.Drawing.Size(103, 14);
             this.firma.TabIndex = 15;
@@ -199,7 +201,7 @@
             // 
             this.kalibrasyontarih.AutoSize = true;
             this.kalibrasyontarih.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.kalibrasyontarih.Location = new System.Drawing.Point(19, 190);
+            this.kalibrasyontarih.Location = new System.Drawing.Point(1, 191);
             this.kalibrasyontarih.Name = "kalibrasyontarih";
             this.kalibrasyontarih.Size = new System.Drawing.Size(95, 14);
             this.kalibrasyontarih.TabIndex = 16;
@@ -208,42 +210,53 @@
             // Kaydet
             // 
             this.Kaydet.Enabled = false;
-            this.Kaydet.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Kaydet.Location = new System.Drawing.Point(124, 359);
+            this.Kaydet.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Kaydet.Location = new System.Drawing.Point(4, 241);
             this.Kaydet.Name = "Kaydet";
-            this.Kaydet.Size = new System.Drawing.Size(102, 23);
+            this.Kaydet.Size = new System.Drawing.Size(325, 23);
             this.Kaydet.TabIndex = 18;
             this.Kaydet.Text = "Kaydet";
             this.Kaydet.UseVisualStyleBackColor = true;
             this.Kaydet.Click += new System.EventHandler(this.Kaydet_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Kaydet);
+            this.groupBox1.Controls.Add(this.İstek);
+            this.groupBox1.Controls.Add(this.kalibrasyontarih);
+            this.groupBox1.Controls.Add(this.Uretici);
+            this.groupBox1.Controls.Add(this.firma);
+            this.groupBox1.Controls.Add(this.Tip);
+            this.groupBox1.Controls.Add(this.hassasiyet);
+            this.groupBox1.Controls.Add(this.Serial);
+            this.groupBox1.Controls.Add(this.serino);
+            this.groupBox1.Controls.Add(this.Sensitivity);
+            this.groupBox1.Controls.Add(this.model);
+            this.groupBox1.Controls.Add(this.Cihaz_Sec);
+            this.groupBox1.Controls.Add(this.marka);
+            this.groupBox1.Controls.Add(this.CalDate);
+            this.groupBox1.Controls.Add(this.cihaz);
+            this.groupBox1.Controls.Add(this.Company);
+            this.groupBox1.Controls.Add(this.rfq);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(335, 275);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "İvmeölçer Temel Bilgiler";
+            // 
             // Identification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(359, 433);
-            this.Controls.Add(this.Kaydet);
-            this.Controls.Add(this.kalibrasyontarih);
-            this.Controls.Add(this.firma);
-            this.Controls.Add(this.hassasiyet);
-            this.Controls.Add(this.serino);
-            this.Controls.Add(this.model);
-            this.Controls.Add(this.marka);
-            this.Controls.Add(this.cihaz);
-            this.Controls.Add(this.rfq);
-            this.Controls.Add(this.Company);
-            this.Controls.Add(this.CalDate);
-            this.Controls.Add(this.Cihaz_Sec);
-            this.Controls.Add(this.Sensitivity);
-            this.Controls.Add(this.Serial);
-            this.Controls.Add(this.Tip);
-            this.Controls.Add(this.Uretici);
-            this.Controls.Add(this.İstek);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(359, 294);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Identification";
             this.Text = "IDENTIFICATION";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -266,6 +279,7 @@
         private System.Windows.Forms.Label firma;
         private System.Windows.Forms.Label kalibrasyontarih;
         private System.Windows.Forms.Button Kaydet;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

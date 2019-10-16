@@ -16,7 +16,7 @@ namespace _1._1_New_Device_Identification
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Identification());
+            Application.Run(new Form1());
         }
     }
 }

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accelerometer.cs" />
+    <Compile Include="CalibrationData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalibrationData.Designer.cs">
+      <DependentUpon>CalibrationData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Identification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CalibrationData.resx">
+      <DependentUpon>CalibrationData.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Identification.resx">
       <DependentUpon>Identification.cs</DependentUpon>
     </EmbeddedResource>
