@@ -30,16 +30,27 @@ namespace _1._1_New_Device_Identification
             }
 
             CalDataEntry.AllowUserToAddRows = false;
+                         
+        }
 
-            if (CalDataEntry.Rows == null)
+        private void CalDataEntry_KeyUp(object sender, KeyEventArgs e)
+        {
+            foreach (DataGridViewRow row in CalDataEntry.Rows)
             {
-                kalibrasyonverisi.Enabled = false;
-            }
-            else
-            {
-                kalibrasyonverisi.Enabled = true;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value == null)
+                    {
+                        kalibrasyonverisi.Enabled = false;
+                    }
+                    else
+                    {
+                        kalibrasyonverisi.Enabled = true;
+                    }
+                }
             }
         }
+
         #region
         private void Kalibrasyonverisi_Click(object sender, EventArgs e)
         {
@@ -66,8 +77,10 @@ namespace _1._1_New_Device_Identification
         {
             dateTimePicker1.Enabled = true;
         }
+
+
         #endregion
 
-        
+       
     }
 }
