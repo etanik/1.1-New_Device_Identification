@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CalDataEntry = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,7 +40,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sertifikayukleme = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.kaltarih = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -71,8 +71,8 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column1.HeaderText = "Frekans";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -105,7 +105,6 @@
             // 
             // kalibrasyonverisi
             // 
-            this.kalibrasyonverisi.Enabled = false;
             this.kalibrasyonverisi.Location = new System.Drawing.Point(4, 371);
             this.kalibrasyonverisi.Name = "kalibrasyonverisi";
             this.kalibrasyonverisi.Size = new System.Drawing.Size(645, 23);
@@ -129,7 +128,7 @@
             // sertifikayukleme
             // 
             this.sertifikayukleme.Controls.Add(this.button3);
-            this.sertifikayukleme.Controls.Add(this.dateTimePicker1);
+            this.sertifikayukleme.Controls.Add(this.kaltarih);
             this.sertifikayukleme.Controls.Add(this.button2);
             this.sertifikayukleme.Controls.Add(this.label2);
             this.sertifikayukleme.Controls.Add(this.button1);
@@ -154,17 +153,17 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
-            // dateTimePicker1
+            // kaltarih
             // 
-            this.dateTimePicker1.CustomFormat = "dd.MM.yyyy";
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(149, 62);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.Value = new System.DateTime(2019, 10, 16, 0, 0, 0, 0);
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            this.kaltarih.CustomFormat = "dd_MM_yyyy";
+            this.kaltarih.Enabled = false;
+            this.kaltarih.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.kaltarih.Location = new System.Drawing.Point(149, 62);
+            this.kaltarih.Name = "kaltarih";
+            this.kaltarih.Size = new System.Drawing.Size(100, 20);
+            this.kaltarih.TabIndex = 5;
+            this.kaltarih.Value = new System.DateTime(2019, 10, 17, 0, 0, 0, 0);
+            this.kaltarih.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // button2
             // 
@@ -258,7 +257,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.GroupBox sertifikayukleme;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker kaltarih;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;

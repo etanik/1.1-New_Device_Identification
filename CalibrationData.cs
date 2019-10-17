@@ -45,7 +45,7 @@ namespace _1._1_New_Device_Identification
                 {
                     if (cell.Value == null)
                     {
-                        kalibrasyonverisi.Enabled = false;
+                        kalibrasyonverisi.Enabled = true;
                     }
                     else
                     {
@@ -80,7 +80,7 @@ namespace _1._1_New_Device_Identification
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            dateTimePicker1.Enabled = true;
+            kaltarih.Enabled = true;
         }
         private void Button3_Click(object sender, EventArgs e)
         {
@@ -96,7 +96,7 @@ namespace _1._1_New_Device_Identification
             Accelerometer yeniivmeolcer = new Accelerometer
             {
                 serial = ivmserino.Text,
-                caldate = dateTimePicker1.Value.ToShortDateString(),
+                caldate = kaltarih.Text,
             };
 
             DialogResult dr = MessageBox.Show(
@@ -110,8 +110,8 @@ namespace _1._1_New_Device_Identification
                     komut.Connection = baglanti;
                     baglanti.Open();
 
-                    string tableName = "acc" + yeniivmeolcer.serial + "_" + yeniivmeolcer.caldate;
-                    string columns = "[Frekans] Text, [UygulananIvme] Text , [HassasiyetKatsayisi] Text, [Sapma] Text, [StandartSapma] Text, [FazAcisi] Text";
+                    string tableName = yeniivmeolcer.serial + "_" + yeniivmeolcer.caldate;
+                    string columns = "[Frekans] Text, [UygulananIvme] Text, [HassasiyetKatsayisi] Text, [Sapma] Text, [StandartSapma] Text, [FazAcisi] Text";
                     komut.Connection = baglanti;
                     komut.CommandText = "CREATE TABLE " + tableName + "(" + columns + ")";
                     komut.ExecuteNonQuery();
