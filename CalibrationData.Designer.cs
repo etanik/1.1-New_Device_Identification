@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CalDataEntry = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +46,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.ivmserino = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.todatabase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.CalDataEntry)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.sertifikayukleme.SuspendLayout();
@@ -71,8 +71,8 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column1.HeaderText = "Frekans";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -152,6 +152,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Sertifika Yükleyin";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // dateTimePicker1
             // 
@@ -213,23 +214,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "İvmeölçer Seri Numarası:";
             // 
-            // button4
+            // todatabase
             // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(674, 151);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(332, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "KAYDET";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
+            this.todatabase.Enabled = false;
+            this.todatabase.Location = new System.Drawing.Point(674, 151);
+            this.todatabase.Name = "todatabase";
+            this.todatabase.Size = new System.Drawing.Size(332, 23);
+            this.todatabase.TabIndex = 5;
+            this.todatabase.Text = "KAYDET";
+            this.todatabase.UseVisualStyleBackColor = true;
+            this.todatabase.Visible = false;
+            this.todatabase.Click += new System.EventHandler(this.Todatabase_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1018, 420);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.todatabase);
             this.Controls.Add(this.sertifikayukleme);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -262,6 +264,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox ivmserino;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button todatabase;
     }
 }

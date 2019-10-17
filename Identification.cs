@@ -16,9 +16,9 @@ namespace _1._1_New_Device_Identification
         public void Kayit()
         {
             int counter = 0;
-            foreach (Control x in this.Controls)
+            foreach (TextBox x in groupBox1.Controls.OfType<TextBox>())
             {
-                if (x is TextBox && x.Text != "")
+                if ( x.Text != "")
                 {
                     counter++;
                     if (counter == 6)
@@ -39,12 +39,7 @@ namespace _1._1_New_Device_Identification
         {
             Kayit();
         }
-
-        private void Cihaz_Sec_KeyUp(object sender, KeyEventArgs e)
-        {
-            Kayit();
-        }
-
+               
         private void Uretici_KeyUp(object sender, KeyEventArgs e)
         {
             Kayit();
@@ -69,16 +64,7 @@ namespace _1._1_New_Device_Identification
         {
             Kayit();
         }
-
-        private void CalDate_KeyUp(object sender, KeyEventArgs e)
-        {
-            Kayit();
-        }
-
-        private void NextCalDate_KeyUp(object sender, KeyEventArgs e)
-        {
-            Kayit();
-        }
+                      
         #endregion
 
         OleDbConnection baglanti = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\etanik\Desktop\Database1.mdb");
@@ -123,7 +109,18 @@ namespace _1._1_New_Device_Identification
                 {
                     MessageBox.Show("Import Error: " + ex);
                 }
+
+                this.Hide();
+                Form1 cvg = new Form1();
+                cvg.Show();
             }
+
+            
+        }
+
+        private void Identification_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -104,7 +104,6 @@
             this.Cihaz_Sec.Name = "Cihaz_Sec";
             this.Cihaz_Sec.Size = new System.Drawing.Size(185, 22);
             this.Cihaz_Sec.TabIndex = 5;
-            this.Cihaz_Sec.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Cihaz_Sec_KeyUp);
             // 
             // CalDate
             // 
@@ -116,7 +115,6 @@
             this.CalDate.Size = new System.Drawing.Size(185, 22);
             this.CalDate.TabIndex = 6;
             this.CalDate.Value = new System.DateTime(2019, 10, 16, 0, 0, 0, 0);
-            this.CalDate.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CalDate_KeyUp);
             // 
             // Company
             // 
@@ -254,6 +252,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Identification";
             this.Text = "IDENTIFICATION";
+            this.Load += new System.EventHandler(this.Identification_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

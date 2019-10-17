@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace _1._1_New_Device_Identification
 {
     public partial class Form1 : Form
     {
+
+        OleDbConnection baglanti = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\etanik\Desktop\Database1.mdb");
+        OleDbCommand komut = new OleDbCommand();
         public Form1()
         {
             InitializeComponent();
@@ -55,6 +59,7 @@ namespace _1._1_New_Device_Identification
         private void Kalibrasyonverisi_Click(object sender, EventArgs e)
         {
             sertifikayukleme.Visible = true;
+            todatabase.Visible = true;
            
         }
 
@@ -77,10 +82,67 @@ namespace _1._1_New_Device_Identification
         {
             dateTimePicker1.Enabled = true;
         }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            todatabase.Enabled = true;
+        }
+
 
 
         #endregion
 
-       
+        private void Todatabase_Click(object sender, EventArgs e)
+        {
+            Accelerometer yeniivmeolcer = new Accelerometer
+            {
+                serial = ivmserino.Text,
+                caldate = dateTimePicker1.Value.ToShortDateString(),
+            };
+
+            DialogResult dr = MessageBox.Show(
+            "Warning: when importing data into the Access database, ensure that the field columns match Access's fields or the file may become corrupt. Do you still wish to proceed?", "Import caution",
+            MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    komut.Connection = baglanti;
+                    baglanti.Open();
+
+                    string tableName = "acc" + yeniivmeolcer.serial + "_" + yeniivmeolcer.caldate;
+                    string columns = "[Frekans] Text, [UygulananIvme] Text , [HassasiyetKatsayisi] Text, [Sapma] Text, [StandartSapma] Text, [FazAcisi] Text";
+                    komut.Connection = baglanti;
+                    komut.CommandText = "CREATE TABLE " + tableName + "(" + columns + ")";
+                    komut.ExecuteNonQuery();
+
+                    komut.CommandText =
+                                        "INSERT INTO " + tableName + "(Frekans, UygulananIvme, HassasiyetKatsayisi, Sapma, StandartSapma, FazAcisi)"
+                                        + "VALUES(@Frekans, @UygulananIvme, @HassasiyetKatsayisi, @Sapma, @StandartSapma, @FazAcisi)";
+
+                    for (int j = 0; j < CalDataEntry.Rows.Count - 1; j++)
+                    {
+                        komut.Parameters.Clear();
+                        komut.Parameters.AddWithValue("@Frekans", Convert.ToDouble(CalDataEntry[0, j].Value));
+                        komut.Parameters.AddWithValue("@Uygulananİvme", Convert.ToDouble(CalDataEntry[1, j].Value));
+                        komut.Parameters.AddWithValue("@HassasiyetKatsayisi", Convert.ToDouble(CalDataEntry[2, j].Value));
+                        komut.Parameters.AddWithValue("@Sapma", Convert.ToDouble(CalDataEntry[3, j].Value));
+                        komut.Parameters.AddWithValue("@StandartSapma", Convert.ToDouble(CalDataEntry[4, j].Value));
+                        komut.Parameters.AddWithValue("@FazAcisi", Convert.ToDouble(CalDataEntry[5, j].Value));
+
+                        komut.ExecuteNonQuery();
+                    }
+                }
+
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show("Import error: " + ex);
+                }
+                
+            }
+
+        }
+
+        
     }
 }
