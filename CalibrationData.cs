@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.IO;
+using System.Diagnostics;
 
 namespace _1._1_New_Device_Identification
 {
@@ -19,6 +20,7 @@ namespace _1._1_New_Device_Identification
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,6 +82,7 @@ namespace _1._1_New_Device_Identification
         {
             kaltarih.Enabled = true;
         }
+                
         private void Button3_Click(object sender, EventArgs e)
         {
             
@@ -91,9 +94,9 @@ namespace _1._1_New_Device_Identification
                     filename = Path.GetFileName(certificate.FileName),
                 };
 
-                //string filename;
-               // string path = certificate.FileName;
-                //filename = Path.GetFileName(path);
+                 //string filename;
+                 // string path = certificate.FileName;
+                 //filename = Path.GetFileName(path);
                 dokuman.Text = ivm.filename ;
             }
                
@@ -153,6 +156,10 @@ namespace _1._1_New_Device_Identification
             }
         }
 
-       
+        private void Kntrl_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo start = new ProcessStartInfo(certificate.FileName);
+            Process.Start(start);
+        }
     }
 }
