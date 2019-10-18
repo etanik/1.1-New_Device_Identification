@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.CalDataEntry = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +40,9 @@
             this.kalibrasyonverisi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sertifikayukleme = new System.Windows.Forms.GroupBox();
+            this.dokuman = new System.Windows.Forms.Label();
+            this.kntrl = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.kaltarih = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,9 +51,11 @@
             this.ivmserino = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.todatabase = new System.Windows.Forms.Button();
+            this.certificate = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.CalDataEntry)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.sertifikayukleme.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // CalDataEntry
@@ -127,6 +133,9 @@
             // 
             // sertifikayukleme
             // 
+            this.sertifikayukleme.Controls.Add(this.dokuman);
+            this.sertifikayukleme.Controls.Add(this.kntrl);
+            this.sertifikayukleme.Controls.Add(this.pictureBox1);
             this.sertifikayukleme.Controls.Add(this.button3);
             this.sertifikayukleme.Controls.Add(this.kaltarih);
             this.sertifikayukleme.Controls.Add(this.button2);
@@ -136,11 +145,39 @@
             this.sertifikayukleme.Controls.Add(this.label1);
             this.sertifikayukleme.Location = new System.Drawing.Point(674, 12);
             this.sertifikayukleme.Name = "sertifikayukleme";
-            this.sertifikayukleme.Size = new System.Drawing.Size(332, 132);
+            this.sertifikayukleme.Size = new System.Drawing.Size(332, 169);
             this.sertifikayukleme.TabIndex = 4;
             this.sertifikayukleme.TabStop = false;
             this.sertifikayukleme.Text = "Sertifika Yükleme";
             this.sertifikayukleme.Visible = false;
+            // 
+            // dokuman
+            // 
+            this.dokuman.AutoSize = true;
+            this.dokuman.Location = new System.Drawing.Point(47, 145);
+            this.dokuman.Name = "dokuman";
+            this.dokuman.Size = new System.Drawing.Size(35, 13);
+            this.dokuman.TabIndex = 9;
+            this.dokuman.Text = "label3";
+            // 
+            // kntrl
+            // 
+            this.kntrl.Location = new System.Drawing.Point(110, 140);
+            this.kntrl.Name = "kntrl";
+            this.kntrl.Size = new System.Drawing.Size(216, 23);
+            this.kntrl.TabIndex = 8;
+            this.kntrl.Text = "Kontrol Et";
+            this.kntrl.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 131);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // button3
             // 
@@ -216,7 +253,7 @@
             // todatabase
             // 
             this.todatabase.Enabled = false;
-            this.todatabase.Location = new System.Drawing.Point(674, 151);
+            this.todatabase.Location = new System.Drawing.Point(674, 187);
             this.todatabase.Name = "todatabase";
             this.todatabase.Size = new System.Drawing.Size(332, 23);
             this.todatabase.TabIndex = 5;
@@ -224,6 +261,11 @@
             this.todatabase.UseVisualStyleBackColor = true;
             this.todatabase.Visible = false;
             this.todatabase.Click += new System.EventHandler(this.Todatabase_Click);
+            // 
+            // certificate
+            // 
+            this.certificate.FileName = "openFileDialog1";
+            this.certificate.Filter = "Adobe Acrobat Document|*.pdf*";
             // 
             // Form1
             // 
@@ -240,6 +282,7 @@
             this.groupBox1.ResumeLayout(false);
             this.sertifikayukleme.ResumeLayout(false);
             this.sertifikayukleme.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +307,9 @@
         private System.Windows.Forms.TextBox ivmserino;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button todatabase;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label dokuman;
+        private System.Windows.Forms.Button kntrl;
+        private System.Windows.Forms.OpenFileDialog certificate;
     }
 }

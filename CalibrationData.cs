@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace _1._1_New_Device_Identification
 {
     public partial class Form1 : Form
     {
-
         OleDbConnection baglanti = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\etanik\Desktop\Database1.mdb");
         OleDbCommand komut = new OleDbCommand();
         public Form1()
@@ -33,8 +33,7 @@ namespace _1._1_New_Device_Identification
                 i++;
             }
 
-            CalDataEntry.AllowUserToAddRows = false;
-                         
+           CalDataEntry.AllowUserToAddRows = false;               
         }
 
         private void CalDataEntry_KeyUp(object sender, KeyEventArgs e)
@@ -60,7 +59,6 @@ namespace _1._1_New_Device_Identification
         {
             sertifikayukleme.Visible = true;
             todatabase.Visible = true;
-           
         }
 
         private void İvmserino_TextChanged(object sender, EventArgs e)
@@ -84,10 +82,24 @@ namespace _1._1_New_Device_Identification
         }
         private void Button3_Click(object sender, EventArgs e)
         {
-            todatabase.Enabled = true;
+            
+           if (certificate.ShowDialog() == DialogResult.OK)
+            {
+                Accelerometer ivm = new Accelerometer
+                {
+                    path = certificate.FileName,
+                    filename = Path.GetFileName(certificate.FileName),
+                };
+
+                //string filename;
+               // string path = certificate.FileName;
+                //filename = Path.GetFileName(path);
+                dokuman.Text = ivm.filename ;
+            }
+               
+           todatabase.Enabled = true;
+           pictureBox1.Visible = true;    
         }
-
-
 
         #endregion
 
@@ -137,12 +149,10 @@ namespace _1._1_New_Device_Identification
                 catch (OleDbException ex)
                 {
                     MessageBox.Show("Import error: " + ex);
-                }
-                
+                }                
             }
-
         }
 
-        
+       
     }
 }

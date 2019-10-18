@@ -17,5 +17,7 @@ namespace _1._1_New_Device_Identification
         public string company;
         public string caldate;
         public string nextdate;
+        public string filename;
+        public string path;
     }
 }
