@@ -15,14 +15,17 @@ namespace _1._1_New_Device_Identification
 {
     public partial class Form1 : Form
     {
+        // Database'e baglanti.
         OleDbConnection baglanti = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\etanik\Desktop\Database1.mdb");
         OleDbCommand komut = new OleDbCommand();
+
         public Form1()
         {
             InitializeComponent();
             
         }
-
+        
+        // Frekans sutununa sabit frekanslarin yazdirilmasi.
         private void Form1_Load(object sender, EventArgs e)
         {
             CalDataEntry.Rows.Add(13);
@@ -38,6 +41,7 @@ namespace _1._1_New_Device_Identification
            CalDataEntry.AllowUserToAddRows = false;               
         }
 
+        // Veri tablosu tamamen dolmadan devam butonu aktif olmayacak.
         private void CalDataEntry_KeyUp(object sender, KeyEventArgs e)
         {
             foreach (DataGridViewRow row in CalDataEntry.Rows)
@@ -46,7 +50,7 @@ namespace _1._1_New_Device_Identification
                 {
                     if (cell.Value == null)
                     {
-                        kalibrasyonverisi.Enabled = true;
+                        kalibrasyonverisi.Enabled = false;
                     }
                     else
                     {
@@ -82,7 +86,7 @@ namespace _1._1_New_Device_Identification
         {
             kaltarih.Enabled = true;
         }
-                
+        // Sertifikayi yukler.        
         private void Button3_Click(object sender, EventArgs e)
         {
             
@@ -100,12 +104,14 @@ namespace _1._1_New_Device_Identification
                 dokuman.Text = ivm.filename ;
             }
                
-           todatabase.Enabled = true;
-           pictureBox1.Visible = true;    
+            todatabase.Enabled = true;
+            pictureBox1.Visible = true;
+            kntrl.Visible = true;
+            kntrl.Enabled = true;
         }
 
         #endregion
-
+        // Tüm girdiler database'e gider.
         private void Todatabase_Click(object sender, EventArgs e)
         {
             Accelerometer yeniivmeolcer = new Accelerometer
@@ -156,6 +162,7 @@ namespace _1._1_New_Device_Identification
             }
         }
 
+        // Sertifikayi goruntuler.
         private void Kntrl_Click(object sender, EventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo(certificate.FileName);
