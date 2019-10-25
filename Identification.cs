@@ -110,7 +110,7 @@ namespace _1._1_New_Device_Identification
                     MessageBox.Show("Import Error: " + ex);
                 }
 
-                this.Hide();
+                Hide();
                 Form1 cvg = new Form1();
                 cvg.Show();
             }
