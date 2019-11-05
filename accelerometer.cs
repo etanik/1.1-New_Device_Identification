@@ -19,5 +19,6 @@ namespace _1._1_New_Device_Identification
         public string nextdate;
         public string filename;
         public string path;
+        public string isim;
     }
 }

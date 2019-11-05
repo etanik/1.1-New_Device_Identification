@@ -9,3 +9,6 @@ C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug
 C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.exe
 C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.pdb
 C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\_1._1_New_Device_Identification.Form1.resources
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\_1._1_New_Device_Identification.Current_Device_Data.resources
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\1.1-New_Device_Identification.csproj.ResolveComReference.cache
+C:\Users\etanik\Desktop\YET_Repositories\1.1-New_Device_Identification\obj\Debug\_1._1_New_Device_Identification.Int_Control_Data.resources

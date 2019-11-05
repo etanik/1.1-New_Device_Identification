@@ -13,66 +13,93 @@ using System.Diagnostics;
 
 namespace _1._1_New_Device_Identification
 {
-    public partial class Form1 : Form
+    public partial class Current_Device_Data : Form
     {
-        // Database'e baglanti.
+
         OleDbConnection baglanti = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\etanik\Desktop\Database1.mdb");
         OleDbCommand komut = new OleDbCommand();
 
-        public Form1()
+        public Current_Device_Data()
         {
             InitializeComponent();
-            
         }
-        
-        // Frekans sutununa sabit frekanslarin yazdirilmasi.
-        private void Form1_Load(object sender, EventArgs e)
+
+        private void Button4_Click(object sender, EventArgs e)
         {
-            CalDataEntry.Rows.Add(13);
+            groupBox2.Enabled = false;
+            groupBox1.Visible = true;
+
+            currentdevice.Rows.Add(13);
             double[] frekans = { 5, 10, 20, 31.5, 50, 80, 100, 160, 315, 500, 1000, 2000, 3150 };
             int i = 0;
 
-            foreach(double sayi in frekans)
+            foreach (double sayi in frekans)
             {
-                CalDataEntry[0, i].Value = sayi;
+                currentdevice[0, i].Value = sayi;
                 i++;
             }
 
-           CalDataEntry.AllowUserToAddRows = false;               
+            currentdevice.AllowUserToAddRows = false;
         }
 
-        // Veri tablosu tamamen dolmadan devam butonu aktif olmayacak.
-        private void CalDataEntry_KeyUp(object sender, KeyEventArgs e)
+        private void Currentdevice_KeyUp(object sender, KeyEventArgs e)
         {
-            foreach (DataGridViewRow row in CalDataEntry.Rows)
+            foreach (DataGridViewRow row in currentdevice.Rows)
             {
                 foreach (DataGridViewCell cell in row.Cells)
                 {
                     if (cell.Value == null)
                     {
-                        kalibrasyonverisi.Enabled = false;
+                        mevcutkayit.Enabled = false;
                     }
                     else
                     {
-                        kalibrasyonverisi.Enabled = true;
+                        mevcutkayit.Enabled = true;
                     }
                 }
             }
         }
 
-        #region
-        private void Kalibrasyonverisi_Click(object sender, EventArgs e)
+        private void Mevcutkayit_Click(object sender, EventArgs e)
         {
             sertifikayukleme.Visible = true;
             todatabase.Visible = true;
+            groupBox1.Enabled = false;
         }
 
-        private void İvmserino_TextChanged(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
-            button1.Enabled = true;
+
+            if (certificate.ShowDialog() == DialogResult.OK)
+            {
+                Accelerometer ivm = new Accelerometer
+                {
+                    path = certificate.FileName,
+                    filename = Path.GetFileName(certificate.FileName),
+                };
+
+                //string filename;
+                // string path = certificate.FileName;
+                //filename = Path.GetFileName(path);
+                dokuman.Text = ivm.filename;
+            }
+
+            todatabase.Enabled = true;
+            pictureBox1.Visible = true;
+            kntrl.Visible = true;
+            kntrl.Enabled = true;
+            dokuman.Visible = true;
         }
 
-        private void kaltarih_ValueChanged(object sender, EventArgs e)
+        private void ComboBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "")
+            {
+                button4.Enabled = true;
+            }
+        }
+
+        private void Kaltarih_ValueChanged(object sender, EventArgs e)
         {
             button2.Enabled = true;
         }
@@ -82,42 +109,17 @@ namespace _1._1_New_Device_Identification
             button3.Enabled = true;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Kntrl_Click(object sender, EventArgs e)
         {
-            kaltarih.Enabled = true;
-        }
-        // Sertifikayi yukler.        
-        private void Button3_Click(object sender, EventArgs e)
-        {
-            
-           if (certificate.ShowDialog() == DialogResult.OK)
-            {
-                Accelerometer ivm = new Accelerometer
-                {
-                    path = certificate.FileName,
-                    filename = Path.GetFileName(certificate.FileName),
-                };
-
-                 //string filename;
-                 // string path = certificate.FileName;
-                 //filename = Path.GetFileName(path);
-                dokuman.Text = ivm.filename ;
-            }
-               
-            todatabase.Enabled = true;
-            pictureBox1.Visible = true;
-            kntrl.Visible = true;
-            kntrl.Enabled = true;
-            dokuman.Visible = true;
+            ProcessStartInfo start = new ProcessStartInfo(certificate.FileName);
+            Process.Start(start);
         }
 
-        #endregion
-        // Tüm girdiler database'e gider.
         private void Todatabase_Click(object sender, EventArgs e)
         {
             Accelerometer yeniivmeolcer = new Accelerometer
             {
-                serial = ivmserino.Text,
+                isim = comboBox1.Text,
                 caldate = kaltarih.Text,
             };
 
@@ -132,7 +134,7 @@ namespace _1._1_New_Device_Identification
                     komut.Connection = baglanti;
                     baglanti.Open();
 
-                    string tableName = yeniivmeolcer.serial + "_" + yeniivmeolcer.caldate;
+                    string tableName = yeniivmeolcer.isim + "_" + yeniivmeolcer.caldate;
                     string columns = "[Frekans] Text, [UygulananIvme] Text, [HassasiyetKatsayisi] Text, [Sapma] Text, [StandartSapma] Text, [FazAcisi] Text";
                     komut.Connection = baglanti;
                     komut.CommandText = "CREATE TABLE " + tableName + "(" + columns + ")";
@@ -142,15 +144,15 @@ namespace _1._1_New_Device_Identification
                                         "INSERT INTO " + tableName + "(Frekans, UygulananIvme, HassasiyetKatsayisi, Sapma, StandartSapma, FazAcisi)"
                                         + "VALUES(@Frekans, @UygulananIvme, @HassasiyetKatsayisi, @Sapma, @StandartSapma, @FazAcisi)";
 
-                    for (int j = 0; j < CalDataEntry.Rows.Count; j++)
+                    for (int j = 0; j < currentdevice.Rows.Count; j++)
                     {
                         komut.Parameters.Clear();
-                        komut.Parameters.AddWithValue("@Frekans", Convert.ToDouble(CalDataEntry[0, j].Value));
-                        komut.Parameters.AddWithValue("@Uygulananİvme", Convert.ToDouble(CalDataEntry[1, j].Value));
-                        komut.Parameters.AddWithValue("@HassasiyetKatsayisi", Convert.ToDouble(CalDataEntry[2, j].Value));
-                        komut.Parameters.AddWithValue("@Sapma", Convert.ToDouble(CalDataEntry[3, j].Value));
-                        komut.Parameters.AddWithValue("@StandartSapma", Convert.ToDouble(CalDataEntry[4, j].Value));
-                        komut.Parameters.AddWithValue("@FazAcisi", Convert.ToDouble(CalDataEntry[5, j].Value));
+                        komut.Parameters.AddWithValue("@Frekans", Convert.ToDouble(currentdevice[0, j].Value));
+                        komut.Parameters.AddWithValue("@Uygulananİvme", Convert.ToDouble(currentdevice[1, j].Value));
+                        komut.Parameters.AddWithValue("@HassasiyetKatsayisi", Convert.ToDouble(currentdevice[2, j].Value));
+                        komut.Parameters.AddWithValue("@Sapma", Convert.ToDouble(currentdevice[3, j].Value));
+                        komut.Parameters.AddWithValue("@StandartSapma", Convert.ToDouble(currentdevice[4, j].Value));
+                        komut.Parameters.AddWithValue("@FazAcisi", Convert.ToDouble(currentdevice[5, j].Value));
 
                         komut.ExecuteNonQuery();
                     }
@@ -159,15 +161,8 @@ namespace _1._1_New_Device_Identification
                 catch (OleDbException ex)
                 {
                     MessageBox.Show("Import error: " + ex);
-                }                
+                }
             }
-        }
-
-        // Sertifikayi goruntuler.
-        private void Kntrl_Click(object sender, EventArgs e)
-        {
-            ProcessStartInfo start = new ProcessStartInfo(certificate.FileName);
-            Process.Start(start);
         }
     }
 }
