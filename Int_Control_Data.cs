@@ -27,7 +27,7 @@ namespace _1._1_New_Device_Identification
                 if (x.Text != "")
                 {
                     counter++;
-                    if (counter == 8)
+                    if (counter == 10)
 
                     {
                         button2.Enabled = true;
@@ -100,6 +100,8 @@ namespace _1._1_New_Device_Identification
             xls.Range["U5"].Value = textBox6.Text;
             xls.Range["U6"].Value = textBox7.Text;
             xls.Range["U7"].Value = textBox8.Text;
+            xls.Range["J26"].Value = textBox9.Text;
+            xls.Range["N26"].Value = textBox10.Text;
             xls.Range["B12"].Value = dataGridView1[0, 0].Value;
             xls.Range["B13"].Value = dataGridView1[0, 1].Value;
             xls.Range["C12"].Value = dataGridView1[1, 0].Value;
@@ -132,6 +134,8 @@ namespace _1._1_New_Device_Identification
         private void Button3_Click(object sender, EventArgs e)
 
         {
+            groupBox3.Enabled = true;
+
             dataGridView2.Rows.Add(10);
             double[] frekans = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int i = 0;
@@ -145,6 +149,40 @@ namespace _1._1_New_Device_Identification
             dataGridView2.AllowUserToAddRows = false;
         }
 
-        
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            groupBox2.Enabled = true;
+        }
+
+       
+        private void DataGridView2_KeyUp(object sender, KeyEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value == null)
+                    {
+                        button4.Enabled = false;
+                    }
+                    else
+                    {
+                        button4.Enabled = true;
+                    }
+                }
+            }
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            onay.Enabled = true;
+            dataGridView4.Rows.Add(1);
+            dataGridView4.AllowUserToAddRows = false;
+        }
+
+        private void Onay_Click(object sender, EventArgs e)
+        {
+            Kaydet.Enabled = true;
+        }
     }
 }
