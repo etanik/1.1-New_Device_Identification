@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Current_Device_Data));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.currentdevice = new System.Windows.Forms.DataGridView();
@@ -93,8 +93,8 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.HeaderText = "Frekans";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -218,7 +218,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(336, 23);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Sertifika Yükleyin";
+            this.button3.Text = "Sertifika Yükle";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 

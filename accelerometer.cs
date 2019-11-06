@@ -15,8 +15,8 @@ namespace _1._1_New_Device_Identification
         public string serial;
         public string sensitivity;
         public string company;
-        public string caldate;
-        public string nextdate;
+        public DateTime caldate;
+        public DateTime nextdate;
         public string filename;
         public string path;
         public string isim;

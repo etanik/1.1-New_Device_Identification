@@ -80,18 +80,29 @@ namespace _1._1_New_Device_Identification
         {
             Kayit();
         }
+
+        private void TextBox9_KeyUp(object sender, KeyEventArgs e)
+        {
+            Kayit();
+        }
+
+        private void TextBox10_KeyUp(object sender, KeyEventArgs e)
+        {
+            Kayit();
+        }
         #endregion
         public Int_Control_Data()
         {
             InitializeComponent();
         }
-
         private void Button1_Click(object sender, EventArgs e)
         {
             string seri = textBox6.Text;
             Excel.Application xls = new Excel.Application();
             xls.Visible = false;
             Workbook wrbk = xls.Workbooks.Open("C:\\Users\\etanik\\Desktop\\F.557_0   İvmeölçer Ara Kontrol Formu.xlsx");
+
+            // F.557 kodlu ivmeolcer ara kontrol formu doldurulur.
             xls.Range["I4"].Value = textBox1.Text;
             xls.Range["I5"].Value = textBox2.Text;
             xls.Range["I6"].Value = textBox3.Text;
@@ -128,12 +139,12 @@ namespace _1._1_New_Device_Identification
             wrbk.SaveAs("C:\\Users\\etanik\\Desktop\\" + seri + ".xlsx");
 
             xls.Workbooks.Close();
-
         }
 
         private void Button3_Click(object sender, EventArgs e)
 
         {
+            dataGridView2.ColumnHeadersVisible = true;
             groupBox3.Enabled = true;
 
             dataGridView2.Rows.Add(10);
@@ -152,9 +163,18 @@ namespace _1._1_New_Device_Identification
         private void Button2_Click(object sender, EventArgs e)
         {
             groupBox2.Enabled = true;
-        }
+            int k = 0;
 
-       
+            foreach (DataGridViewColumn clmn in dataGridView1.Columns)
+            {
+                dataGridView1.Columns[k].Visible = true;
+                k++;
+            }
+
+            dataGridView1.ColumnHeadersVisible = true;
+            dataGridView1.AllowUserToAddRows = true;
+        }
+        
         private void DataGridView2_KeyUp(object sender, KeyEventArgs e)
         {
             foreach (DataGridViewRow row in dataGridView2.Rows)
@@ -175,14 +195,47 @@ namespace _1._1_New_Device_Identification
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            dataGridView4.ColumnHeadersVisible = true;
             onay.Enabled = true;
             dataGridView4.Rows.Add(1);
             dataGridView4.AllowUserToAddRows = false;
+            // Formulasyonlar. ===================================================================================================================================
+            double average, intctrl, firstcal, lastcal, fdev, ldev;
+
+            average = (Convert.ToDouble(dataGridView2[1, 0].Value) + Convert.ToDouble(dataGridView2[1, 1].Value) + Convert.ToDouble(dataGridView2[1, 2].Value) +
+                        Convert.ToDouble(dataGridView2[1, 3].Value) + Convert.ToDouble(dataGridView2[1, 4].Value) + Convert.ToDouble(dataGridView2[1, 5].Value)
+                        + Convert.ToDouble(dataGridView2[1, 6].Value) + Convert.ToDouble(dataGridView2[1, 7].Value) + Convert.ToDouble(dataGridView2[1, 8].Value)
+                        + Convert.ToDouble(dataGridView2[1, 9].Value))/10;
+
+            dataGridView4[0, 0].Value = average;
+            intctrl = average / (10 / 9.81);
+            dataGridView4[1, 0].Value = intctrl;
+            firstcal = Convert.ToDouble(textBox9.Text);
+            dataGridView4[2, 0].Value = firstcal;
+            lastcal = Convert.ToDouble(textBox10.Text);
+            dataGridView4[3, 0].Value = lastcal;
+            fdev = (intctrl - firstcal) / firstcal;
+            dataGridView4[4, 0].Value = fdev;
+            ldev = (intctrl - lastcal) / lastcal;
+            dataGridView4[5, 0].Value = ldev;
+           //=========================================================================================================================================================     
         }
 
         private void Onay_Click(object sender, EventArgs e)
         {
             Kaydet.Enabled = true;
         }
+
+        private void Int_Control_Data_Load(object sender, EventArgs e)
+        {
+            int j = 0;
+
+            foreach(DataGridViewColumn clmn in dataGridView1.Columns)
+            {
+                dataGridView1.Columns[j].Visible = false;
+                j++;
+
+            }                      
+        }        
     }
 }

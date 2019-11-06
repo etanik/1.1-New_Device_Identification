@@ -85,8 +85,8 @@ namespace _1._1_New_Device_Identification
                 serial = Serial.Text,
                 sensitivity = Sensitivity.Text,
                 company = Company.Text,
-                caldate = CalDate.Value.ToShortDateString(),
-                nextdate = CalDate.Value.AddYears(2).ToShortDateString(),
+                caldate = CalDate.Value,/*.ToShortDateString()*/
+                nextdate = CalDate.Value,/*.AddYears(2).ToShortDateString(),*/
             };
 
             DialogResult dr = MessageBox.Show(
@@ -109,18 +109,15 @@ namespace _1._1_New_Device_Identification
                 {
                     MessageBox.Show("Import Error: " + ex);
                 }
-
+                /*
                 Hide();
                 Form1 cvg = new Form1();
-                cvg.Show();
+                cvg.Show();*/
             }
 
             
         }
 
-        private void Identification_Load(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

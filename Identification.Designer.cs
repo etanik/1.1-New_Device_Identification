@@ -252,7 +252,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Identification";
             this.Text = "IDENTIFICATION";
-            this.Load += new System.EventHandler(this.Identification_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

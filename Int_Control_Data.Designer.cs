@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,8 +75,8 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.onay = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,22 +120,23 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1035, 142);
+            this.groupBox1.Size = new System.Drawing.Size(1046, 142);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "İvmeölçer Ara Kontrol";
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(920, 33);
+            this.textBox10.Location = new System.Drawing.Point(931, 33);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(109, 20);
             this.textBox10.TabIndex = 21;
+            this.textBox10.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox10_KeyUp);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(772, 36);
+            this.label10.Location = new System.Drawing.Point(783, 36);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(142, 13);
             this.label10.TabIndex = 20;
@@ -147,6 +148,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(109, 20);
             this.textBox9.TabIndex = 19;
+            this.textBox9.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBox9_KeyUp);
             // 
             // label9
             // 
@@ -328,7 +330,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ColumnHeadersVisible = false;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -376,7 +382,7 @@
             this.Kaydet.Enabled = false;
             this.Kaydet.Location = new System.Drawing.Point(12, 671);
             this.Kaydet.Name = "Kaydet";
-            this.Kaydet.Size = new System.Drawing.Size(1035, 23);
+            this.Kaydet.Size = new System.Drawing.Size(1046, 23);
             this.Kaydet.TabIndex = 2;
             this.Kaydet.Text = "Kaydet";
             this.Kaydet.UseVisualStyleBackColor = true;
@@ -388,7 +394,11 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.ColumnHeadersVisible = false;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column7,
             this.Column8});
@@ -405,7 +415,7 @@
             this.groupBox3.Enabled = false;
             this.groupBox3.Location = new System.Drawing.Point(675, 160);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(372, 314);
+            this.groupBox3.Size = new System.Drawing.Size(383, 314);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Ölçüm Sayfası";
@@ -472,25 +482,10 @@
             this.groupBox4.Controls.Add(this.dataGridView4);
             this.groupBox4.Location = new System.Drawing.Point(12, 480);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1035, 185);
+            this.groupBox4.Size = new System.Drawing.Size(1046, 185);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Sonuç Tablosu";
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20});
-            this.dataGridView4.Location = new System.Drawing.Point(5, 19);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(1024, 129);
-            this.dataGridView4.TabIndex = 0;
             // 
             // onay
             // 
@@ -503,50 +498,89 @@
             this.onay.UseVisualStyleBackColor = true;
             this.onay.Click += new System.EventHandler(this.Onay_Click);
             // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.ColumnHeadersVisible = false;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20});
+            this.dataGridView4.Location = new System.Drawing.Point(5, 19);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.Size = new System.Drawing.Size(1024, 129);
+            this.dataGridView4.TabIndex = 0;
+            // 
             // Column15
             // 
             this.Column15.HeaderText = "Çıkış Gerilim Ortalaması (mV)";
             this.Column15.Name = "Column15";
-            this.Column15.Width = 150;
+            this.Column15.ReadOnly = true;
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column15.Width = 160;
             // 
             // Column16
             // 
             this.Column16.HeaderText = "Ara Kontrol Hassasiyeti (mV/g)";
             this.Column16.Name = "Column16";
-            this.Column16.Width = 150;
+            this.Column16.ReadOnly = true;
+            this.Column16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column16.Width = 160;
             // 
             // Column17
             // 
             this.Column17.HeaderText = "İlk Kalibrasyon Hassasiyeti (mV/g)";
             this.Column17.Name = "Column17";
-            this.Column17.Width = 150;
+            this.Column17.ReadOnly = true;
+            this.Column17.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column17.Width = 160;
             // 
             // Column18
             // 
             this.Column18.HeaderText = "Son Kalibrasyon Hassasiyeti (mV/g)";
             this.Column18.Name = "Column18";
-            this.Column18.Width = 150;
+            this.Column18.ReadOnly = true;
+            this.Column18.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column18.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column18.Width = 160;
             // 
             // Column19
             // 
             this.Column19.HeaderText = "İlk Kalibrasyona Göre Sapma";
             this.Column19.Name = "Column19";
-            this.Column19.Width = 150;
+            this.Column19.ReadOnly = true;
+            this.Column19.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column19.Width = 160;
             // 
             // Column20
             // 
             this.Column20.HeaderText = "Son Kalibrasyona Göre Sapma";
             this.Column20.Name = "Column20";
-            this.Column20.Width = 150;
+            this.Column20.ReadOnly = true;
+            this.Column20.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Column20.Width = 160;
             // 
             // Column7
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column7.HeaderText = "Ölçüm Sırası";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column7.Width = 150;
             // 
             // Column8
@@ -554,6 +588,7 @@
             this.Column8.HeaderText = "Çıkış Gerilimi [mV]";
             this.Column8.Name = "Column8";
             this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Column8.Width = 150;
             // 
             // Int_Control_Data
@@ -561,7 +596,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1059, 705);
+            this.ClientSize = new System.Drawing.Size(1081, 705);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Kaydet);
@@ -569,6 +604,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Int_Control_Data";
             this.Text = "Int_Control_Data";
+            this.Load += new System.EventHandler(this.Int_Control_Data_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -632,13 +668,13 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button onay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }

@@ -118,7 +118,7 @@ namespace _1._1_New_Device_Identification
             Accelerometer yeniivmeolcer = new Accelerometer
             {
                 serial = ivmserino.Text,
-                caldate = kaltarih.Text,
+                caldate = Convert.ToDateTime(kaltarih.Text),
             };
 
             DialogResult dr = MessageBox.Show(
