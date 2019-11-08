@@ -15,31 +15,92 @@ namespace _1._1_New_Device_Identification
 {
     public partial class Current_Device_Data : Form
     {
+        public void devam()
+        {
+            int cnt = 0;
+            foreach (ComboBox cmb in groupBox2.Controls.OfType<ComboBox>())
+            {
+                if (cmb.SelectedItem != null)
+                {
+                    cnt++;
+                    if (cnt == 2)
+                    {
+                        button4.Enabled = true;
+                    }
+                    else
+                    {
+                        button4.Enabled = false;
+                    }
 
+                }
+            }
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            devam();
+            comboBox1.Enabled = false;
+        }
+
+        private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            devam();
+            comboBox2.Enabled = false;
+        }
+        
         OleDbConnection baglanti = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\etanik\Desktop\Database1.mdb");
         OleDbCommand komut = new OleDbCommand();
 
         public Current_Device_Data()
         {
             InitializeComponent();
-        }
+        }                
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            groupBox2.Enabled = false;
-            groupBox1.Visible = true;
-
-            currentdevice.Rows.Add(13);
-            double[] frekans = { 5, 10, 20, 31.5, 50, 80, 100, 160, 315, 500, 1000, 2000, 3150 };
-            int i = 0;
-
-            foreach (double sayi in frekans)
+            if (comboBox2.Text=="1" || comboBox2.Text == "10")
             {
-                currentdevice[0, i].Value = sayi;
-                i++;
-            }
+                currentdevice.Rows.Clear();
+                currentdevice.Rows.Add(11);
+                double[] frekans = { 20, 31.5, 50, 80, 100, 160, 315, 500, 1000, 2000, 3150 };
+                int i = 0;
 
-            currentdevice.AllowUserToAddRows = false;
+                foreach (double sayi in frekans)
+                {
+                    currentdevice[0, i].Value = sayi;
+                    i++;
+                }
+            }     
+            else if(comboBox2.Text=="500" || comboBox2.Text == "1000")
+            {
+                currentdevice.Rows.Clear();
+                currentdevice.Rows.Add(14);
+                double[] frekans = {1, 5, 10, 20, 31.5, 50, 80, 100, 160, 315, 500, 1000, 2000, 3150 };
+                int i = 0;
+
+                foreach (double sayi in frekans)
+                {
+                    currentdevice[0, i].Value = sayi;
+                    i++;
+                }
+            }
+            else
+            {
+                currentdevice.Rows.Clear();
+                currentdevice.Rows.Add(13);
+                double[] frekans = { 5, 10, 20, 31.5, 50, 80, 100, 160, 315, 500, 1000, 2000, 3150 };
+                int i = 0;
+
+                foreach (double sayi in frekans)
+                {
+                    currentdevice[0, i].Value = sayi;
+                    i++;
+                }
+            }
+            groupBox2.Enabled = false;
+            currentdevice.ColumnHeadersVisible = true;
+            button1.Visible = true;
+            button1.Enabled = true;                
         }
 
         private void Currentdevice_KeyUp(object sender, KeyEventArgs e)
@@ -65,6 +126,10 @@ namespace _1._1_New_Device_Identification
             sertifikayukleme.Visible = true;
             todatabase.Visible = true;
             groupBox1.Enabled = false;
+            kaltarih.Enabled = true;
+            button3.Visible = true;
+            kaltarih.Visible = true;
+            button2.Visible = true;
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -84,20 +149,11 @@ namespace _1._1_New_Device_Identification
                 dokuman.Text = ivm.filename;
             }
 
-            todatabase.Enabled = true;
             pictureBox1.Visible = true;
             kntrl.Visible = true;
             kntrl.Enabled = true;
             dokuman.Visible = true;
-        }
-
-        private void ComboBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.Text != "")
-            {
-                button4.Enabled = true;
-            }
-        }
+        }     
 
         private void Kaltarih_ValueChanged(object sender, EventArgs e)
         {
@@ -113,6 +169,8 @@ namespace _1._1_New_Device_Identification
         {
             ProcessStartInfo start = new ProcessStartInfo(certificate.FileName);
             Process.Start(start);
+            degistir.Visible = true;
+            button5.Visible = true;
         }
 
         private void Todatabase_Click(object sender, EventArgs e)
@@ -120,7 +178,7 @@ namespace _1._1_New_Device_Identification
             Accelerometer yeniivmeolcer = new Accelerometer
             {
                 isim = comboBox1.Text,
-                caldate = Convert.ToDateTime(kaltarih.Text),
+                tarih = kaltarih.Text,
             };
 
             DialogResult dr = MessageBox.Show(
@@ -134,7 +192,7 @@ namespace _1._1_New_Device_Identification
                     komut.Connection = baglanti;
                     baglanti.Open();
 
-                    string tableName = yeniivmeolcer.isim + "_" + yeniivmeolcer.caldate;
+                    string tableName = yeniivmeolcer.isim + "_" + yeniivmeolcer.tarih;
                     string columns = "[Frekans] Text, [UygulananIvme] Text, [HassasiyetKatsayisi] Text, [Sapma] Text, [StandartSapma] Text, [FazAcisi] Text";
                     komut.Connection = baglanti;
                     komut.CommandText = "CREATE TABLE " + tableName + "(" + columns + ")";
@@ -163,6 +221,24 @@ namespace _1._1_New_Device_Identification
                     MessageBox.Show("Import error: " + ex);
                 }
             }
+        }
+
+        private void Current_Device_Data_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            groupBox2.Enabled = true;
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;           
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            todatabase.Enabled = true;
         }
     }
 }

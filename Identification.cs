@@ -86,7 +86,7 @@ namespace _1._1_New_Device_Identification
                 sensitivity = Sensitivity.Text,
                 company = Company.Text,
                 caldate = CalDate.Value,/*.ToShortDateString()*/
-                nextdate = CalDate.Value,/*.AddYears(2).ToShortDateString(),*/
+                nextdate = CalDate.Value.AddYears(2),
             };
 
             DialogResult dr = MessageBox.Show(

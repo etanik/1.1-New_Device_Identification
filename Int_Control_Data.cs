@@ -22,8 +22,7 @@ namespace _1._1_New_Device_Identification
         {
             int counter = 0;
             foreach(System.Windows.Forms.TextBox x in groupBox1.Controls.OfType<System.Windows.Forms.TextBox>())
-            {
-                
+            {                
                 if (x.Text != "")
                 {
                     counter++;
@@ -32,7 +31,6 @@ namespace _1._1_New_Device_Identification
                     {
                         button2.Enabled = true;
                     }
-
                     else
                     {
                         button2.Enabled = false;
@@ -91,6 +89,7 @@ namespace _1._1_New_Device_Identification
             Kayit();
         }
         #endregion
+
         public Int_Control_Data()
         {
             InitializeComponent();
@@ -101,8 +100,9 @@ namespace _1._1_New_Device_Identification
             Excel.Application xls = new Excel.Application();
             xls.Visible = false;
             Workbook wrbk = xls.Workbooks.Open("C:\\Users\\etanik\\Desktop\\F.557_0   İvmeölçer Ara Kontrol Formu.xlsx");
-
+            #region
             // F.557 kodlu ivmeolcer ara kontrol formu doldurulur.
+
             xls.Range["I4"].Value = textBox1.Text;
             xls.Range["I5"].Value = textBox2.Text;
             xls.Range["I6"].Value = textBox3.Text;
@@ -135,14 +135,15 @@ namespace _1._1_New_Device_Identification
             xls.Range["T19"].Value = dataGridView2[1, 7].Value;
             xls.Range["V19"].Value = dataGridView2[1, 8].Value;
             xls.Range["X19"].Value = dataGridView2[1, 9].Value;
-           
+
+            #endregion
+
             wrbk.SaveAs("C:\\Users\\etanik\\Desktop\\" + seri + ".xlsx");
 
             xls.Workbooks.Close();
         }
 
         private void Button3_Click(object sender, EventArgs e)
-
         {
             dataGridView2.ColumnHeadersVisible = true;
             groupBox3.Enabled = true;
@@ -163,14 +164,6 @@ namespace _1._1_New_Device_Identification
         private void Button2_Click(object sender, EventArgs e)
         {
             groupBox2.Enabled = true;
-            int k = 0;
-
-            foreach (DataGridViewColumn clmn in dataGridView1.Columns)
-            {
-                dataGridView1.Columns[k].Visible = true;
-                k++;
-            }
-
             dataGridView1.ColumnHeadersVisible = true;
             dataGridView1.AllowUserToAddRows = true;
         }
@@ -218,24 +211,38 @@ namespace _1._1_New_Device_Identification
             dataGridView4[4, 0].Value = fdev;
             ldev = (intctrl - lastcal) / lastcal;
             dataGridView4[5, 0].Value = ldev;
+
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            style.BackColor = Color.Red;
+            style.ForeColor = Color.Black;
+
+            DataGridViewCellStyle stayla = new DataGridViewCellStyle();
+            stayla.BackColor = Color.Green;
+            stayla.ForeColor = Color.Black;
+            
+                if (fdev>0.12)
+                {
+                    dataGridView4.Rows[0].Cells[4].Style = style;
+                }
+                else
+                {
+                    dataGridView4.Rows[0].Cells[4].Style = stayla;
+                }
+
+                if (ldev > 0.06)
+                {
+                dataGridView4.Rows[0].Cells[5].Style = style;
+                }
+                else
+                {
+                dataGridView4.Rows[0].Cells[5].Style = stayla;
+                }            
            //=========================================================================================================================================================     
         }
 
         private void Onay_Click(object sender, EventArgs e)
         {
             Kaydet.Enabled = true;
-        }
-
-        private void Int_Control_Data_Load(object sender, EventArgs e)
-        {
-            int j = 0;
-
-            foreach(DataGridViewColumn clmn in dataGridView1.Columns)
-            {
-                dataGridView1.Columns[j].Visible = false;
-                j++;
-
-            }                      
-        }        
+        }       
     }
 }

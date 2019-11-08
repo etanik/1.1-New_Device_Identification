@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace _1._1_New_Device_Identification
 {
    public class Accelerometer
-    {
+   {
         public string siparis;
         public string cihaz_tipi;
         public string marka;
@@ -20,5 +20,7 @@ namespace _1._1_New_Device_Identification
         public string filename;
         public string path;
         public string isim;
-    }
+        public string tarih;    
+        
+   }
 }

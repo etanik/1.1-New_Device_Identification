@@ -128,82 +128,82 @@
             // rfq
             // 
             this.rfq.AutoSize = true;
-            this.rfq.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rfq.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.rfq.Location = new System.Drawing.Point(1, 30);
             this.rfq.Name = "rfq";
-            this.rfq.Size = new System.Drawing.Size(82, 14);
+            this.rfq.Size = new System.Drawing.Size(80, 13);
             this.rfq.TabIndex = 9;
-            this.rfq.Text = "İstek Numarası";
+            this.rfq.Text = "İstek Numarası:";
             // 
             // cihaz
             // 
             this.cihaz.AutoSize = true;
-            this.cihaz.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cihaz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cihaz.Location = new System.Drawing.Point(1, 56);
             this.cihaz.Name = "cihaz";
-            this.cihaz.Size = new System.Drawing.Size(33, 14);
+            this.cihaz.Size = new System.Drawing.Size(36, 13);
             this.cihaz.TabIndex = 10;
-            this.cihaz.Text = "Cihaz";
+            this.cihaz.Text = "Cihaz:";
             // 
             // marka
             // 
             this.marka.AutoSize = true;
-            this.marka.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.marka.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.marka.Location = new System.Drawing.Point(1, 82);
             this.marka.Name = "marka";
-            this.marka.Size = new System.Drawing.Size(39, 14);
+            this.marka.Size = new System.Drawing.Size(40, 13);
             this.marka.TabIndex = 11;
-            this.marka.Text = "Marka";
+            this.marka.Text = "Marka:";
             // 
             // model
             // 
             this.model.AutoSize = true;
-            this.model.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.model.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.model.Location = new System.Drawing.Point(1, 108);
             this.model.Name = "model";
-            this.model.Size = new System.Drawing.Size(38, 14);
+            this.model.Size = new System.Drawing.Size(39, 13);
             this.model.TabIndex = 12;
-            this.model.Text = "Model";
+            this.model.Text = "Model:";
             // 
             // serino
             // 
             this.serino.AutoSize = true;
-            this.serino.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.serino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.serino.Location = new System.Drawing.Point(1, 134);
             this.serino.Name = "serino";
-            this.serino.Size = new System.Drawing.Size(77, 14);
+            this.serino.Size = new System.Drawing.Size(75, 13);
             this.serino.TabIndex = 13;
-            this.serino.Text = "Seri Numarası";
+            this.serino.Text = "Seri Numarası:";
             // 
             // hassasiyet
             // 
             this.hassasiyet.AutoSize = true;
-            this.hassasiyet.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.hassasiyet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.hassasiyet.Location = new System.Drawing.Point(1, 160);
             this.hassasiyet.Name = "hassasiyet";
-            this.hassasiyet.Size = new System.Drawing.Size(99, 14);
+            this.hassasiyet.Size = new System.Drawing.Size(96, 13);
             this.hassasiyet.TabIndex = 14;
-            this.hassasiyet.Text = "Hassasiyet (mV/g)";
+            this.hassasiyet.Text = "Hassasiyet (mV/g):";
             // 
             // firma
             // 
             this.firma.AutoSize = true;
-            this.firma.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.firma.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.firma.Location = new System.Drawing.Point(1, 216);
             this.firma.Name = "firma";
-            this.firma.Size = new System.Drawing.Size(103, 14);
+            this.firma.Size = new System.Drawing.Size(104, 13);
             this.firma.TabIndex = 15;
-            this.firma.Text = "Kalibrasyonu Yapan";
+            this.firma.Text = "Kalibrasyonu Yapan:";
             // 
             // kalibrasyontarih
             // 
             this.kalibrasyontarih.AutoSize = true;
-            this.kalibrasyontarih.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.kalibrasyontarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.kalibrasyontarih.Location = new System.Drawing.Point(1, 191);
             this.kalibrasyontarih.Name = "kalibrasyontarih";
-            this.kalibrasyontarih.Size = new System.Drawing.Size(95, 14);
+            this.kalibrasyontarih.Size = new System.Drawing.Size(93, 13);
             this.kalibrasyontarih.TabIndex = 16;
-            this.kalibrasyontarih.Text = "Kalibrasyon Tarihi";
+            this.kalibrasyontarih.Text = "Kalibrasyon Tarihi:";
             // 
             // Kaydet
             // 

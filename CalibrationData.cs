@@ -118,7 +118,7 @@ namespace _1._1_New_Device_Identification
             Accelerometer yeniivmeolcer = new Accelerometer
             {
                 serial = ivmserino.Text,
-                caldate = Convert.ToDateTime(kaltarih.Text),
+                tarih = kaltarih.Text,
             };
 
             DialogResult dr = MessageBox.Show(
@@ -132,7 +132,7 @@ namespace _1._1_New_Device_Identification
                     komut.Connection = baglanti;
                     baglanti.Open();
 
-                    string tableName = yeniivmeolcer.serial + "_" + yeniivmeolcer.caldate;
+                    string tableName = yeniivmeolcer.serial + "_" + yeniivmeolcer.tarih;
                     string columns = "[Frekans] Text, [UygulananIvme] Text, [HassasiyetKatsayisi] Text, [Sapma] Text, [StandartSapma] Text, [FazAcisi] Text";
                     komut.Connection = baglanti;
                     komut.CommandText = "CREATE TABLE " + tableName + "(" + columns + ")";
