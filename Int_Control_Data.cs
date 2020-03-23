@@ -192,7 +192,7 @@ namespace _1._1_New_Device_Identification
             onay.Enabled = true;
             dataGridView4.Rows.Add(1);
             dataGridView4.AllowUserToAddRows = false;
-            // Formulasyonlar. ===================================================================================================================================
+        // Formulasyonlar. ===================================================================================================================================
             double average, intctrl, firstcal, lastcal, fdev, ldev;
 
             average = (Convert.ToDouble(dataGridView2[1, 0].Value) + Convert.ToDouble(dataGridView2[1, 1].Value) + Convert.ToDouble(dataGridView2[1, 2].Value) +
@@ -237,7 +237,7 @@ namespace _1._1_New_Device_Identification
                 {
                 dataGridView4.Rows[0].Cells[5].Style = stayla;
                 }            
-           //=========================================================================================================================================================     
+        //=========================================================================================================================================================     
         }
 
         private void Onay_Click(object sender, EventArgs e)

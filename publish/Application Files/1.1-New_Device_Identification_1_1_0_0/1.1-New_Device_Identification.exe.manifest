@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="1.1-New_Device_Identification.exe" version="1.1.0.0" publicKeyToken="f4f0bd9ea7d4ac8f" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="1.1-New_Device_Identification" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="1.1-New_Device_Identification.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Bildirim Seçenekleri
+             Windows Kullanıcı Hesabı Denetimi düzeyini değiştirmek istiyorsanız 
+             requestedExecutionLevel düğümünü aşağıdakilerden biriyle değiştirin.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            requestedExecutionLevel öğesini belirtmek, dosya ve kayıt defteri sanallaştırmasını devre dışı bırakır. 
+            Uygulamanız geriye doğru uyumluluk için bu sanallaştırmayı gerektiriyorsa, bu öğeyi
+            kaldırın.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="1.1-New_Device_Identification.exe" size="55208">
+      <assemblyIdentity name="1.1-New_Device_Identification" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>v3qDSVoEUfBFBfN5yi/2oF8D2m24NunqJ/SuAxkPge8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="1.1-New_Device_Identification.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Bu uygulamanın test edildiği ve birlikte çalışmak için tasarlandığı
+           Windows sürümlerinin bir listesi. Uygun öğelerin açıklamasını kaldırdığınızda Windows
+           en uyumlu ortamı otomatik olarak seçer. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=TEKNO\etanik" issuerKeyHash="33fcadc5cc74a297a249b84686815bdf17808ecb" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>qh9uBQPC8s40WqpuGNkXmfVZYmFPjGLwNEHiqUK9ALc=</DigestValue></Reference></SignedInfo><SignatureValue>U7m4UxuhwHgjhm/YCLzzMde/Xv533ndutO53JiOPWnp5lYCdYsfRTiqfXI3e47ySCeSwv2/u+VQfKb2dooYbNFaxpzQSOrjOLVAqUPfXxj00TeG/35qcPiKLcfWuhQoU+JW90ruTpDbDFiSx2gFwCGvGX/1OW4jOjlskff/0oOg=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>1FnY+jDbgLGAHo8fCAbU5vXeazNP2ItsENJZW9brRMAM6QZ79Qo8QOSSBXB7eiw4XtGxqyd394BWG08hRJeoGyXokbO6Yr26OBoBLs40vIoG+DqUddwTUZmUSXsvOR3VVditWN+1DJwBWTfqRAUaWZP+10g7EgnijTj0mrq1Ra0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="b700bd42a9e24134f0628c4f616259f59917d9186eaa5a34cef2c203056e1faa" Description="" Url=""><as:assemblyIdentity name="1.1-New_Device_Identification.exe" version="1.1.0.0" publicKeyToken="f4f0bd9ea7d4ac8f" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=TEKNO\etanik</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>7aRsytma+bJ7cStuP+OUaVvuydGOwvH/VBM0LbsS1a0=</DigestValue></Reference></SignedInfo><SignatureValue>aaqDJ036o0rIV8M9xiqefoluKyrloJ9IF6n4IGSVDjKo+rrLetLuQJFllgbzksdOYBMU5uD+5LnpJHhptyGVlp4PMh7sSX4p1RfQmyZ/a7jinTnK75vDyTmz6YHRjlUbF9W2mHMiReKYpSP1sRszhpHwO2WQ1k7y2VZTfgsZvc8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>1FnY+jDbgLGAHo8fCAbU5vXeazNP2ItsENJZW9brRMAM6QZ79Qo8QOSSBXB7eiw4XtGxqyd394BWG08hRJeoGyXokbO6Yr26OBoBLs40vIoG+DqUddwTUZmUSXsvOR3VVditWN+1DJwBWTfqRAUaWZP+10g7EgnijTj0mrq1Ra0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQQDKWwbalv4RBuCns+UYtTzANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgAVABFAEsATgBPAFwAZQB0AGEAbgBpAGswHhcNMTkxMjE3MDQ1NjU1WhcNMjAxMjE2MTA1NjU1WjAjMSEwHwYDVQQDHhgAVABFAEsATgBPAFwAZQB0AGEAbgBpAGswgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANRZ2Pow24CxgB6PHwgG1Ob13mszT9iLbBDSWVvW60TADOkGe/UKPEDkkgVwe3osOF7Rsasnd/eAVhtPIUSXqBsl6JGzumK9ujgaAS7ONLyKBvg6lHXcE1GZlEl7Lzkd1VXYrVjftQycAVk36kQFGlmT/tdIOxIJ4o049Jq6tUWtAgMBAAEwDQYJKoZIhvcNAQELBQADgYEArdvUvcGZ6cQEx//PzC2VALR2Adf/fuuOXo9yZoBdn0hWW1zfCkjePXVBQQMIV62Lukt7K/LKTRCSWrLBoX89GriNDuv1Qy2bvqDP1Fxe6ALyaiRlF6veub8dLJhW6HyQLdUcFx5b4RRG78WARSfX39rD3IhmfqN9szj6wCOcRvE=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
